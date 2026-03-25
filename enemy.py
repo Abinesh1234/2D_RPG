@@ -10,7 +10,8 @@ class Enemy(Entity):
 
         # graphics set up
         self.import_graphics(monster_name)
-        self.image = pygame.Surface((64, 64))
+        self.status = 'idle'
+        self.image = self.animations[self.status][self.frame_index]
         self.rect = self.image.get_rect(topleft = pos)
 
     def import_graphics(self, name):
